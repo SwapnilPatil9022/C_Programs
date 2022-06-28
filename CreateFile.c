@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<fcntl.h>
 
 int main()
 {
@@ -9,14 +10,14 @@ int main()
 	printf("Enter the file name that you want to create\n");
 	scanf("%s",fname);
 	
-	fd = create(fname,0777);
+	fd = creat(fname,0777);
 	if(fd == -1)
 	{
 		printf("Unable to create file\n");
 	}
 	else
 	{
-		printf("File is succesfully created\n");
+		printf("File is succesfully created with :%d\n",fd);
 	}
 	return 0;
 }
